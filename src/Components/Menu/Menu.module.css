@@ -1,0 +1,33 @@
+.title {
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 5px
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 360px;
+    height: 640px;
+    border: 1px solid gray;
+}
+.menu_foods {
+    margin-top: 10px;
+    border: 1px solid gray;
+    display: flex;
+    padding-right: 80px;
+}
+
+.menu_foods img {
+    width: 62px;
+    height: 63px;
+    vertical-align: middle;
+
+}
+.cardfood {
+    padding: 0px;
+    
+}
