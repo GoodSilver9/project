@@ -1,33 +1,43 @@
-.title {
-    text-align: center;
-    font-size: 45px;
-    font-weight: bold;
-    margin-top: 5px
-}
+
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
     width: 360px;
     height: 640px;
     border: 1px solid gray;
 }
-.menu_foods {
-    margin-top: 10px;
-    border: 1px solid gray;
+
+.title {
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+
+}
+
+.menucontainer {
     display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-direction: column;
+    
+}
+
+.menu_foods {
+    padding: 0px;
+    background-color: rgb(224, 224, 224);
+    border-radius: 5px;
     padding-right: 80px;
+    display: flex;
+    align-items: center;
 }
 
 .menu_foods img {
     width: 62px;
     height: 63px;
     vertical-align: middle;
+    margin-right: 10px;
 
-}
-.cardfood {
-    padding: 0px;
-    
 }

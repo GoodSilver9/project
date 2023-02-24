@@ -1,36 +1,44 @@
 import React from "react";
 import classes from "./Menu.module.css";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import soybeansoup from "../../assets/img/된장찌개.jpg";
-import { Box } from "@mui/material";
+import kimchisoup from "../../assets/img/김치찌개.jfif";
+import stirFriedPork from "../../assets/img/제육볶음.jpg";
+import seaweedsoup from "../../assets/img/미역국.jpg";
+import curry from "../../assets/img/카레.jpg";
+import dumplingsoup from "../../assets/img/만둣국.jpg";
+import ButtonLink from "../MenuLink/ButtonLink";
 
 const Menu = () => {
   return (
     <div className={classes.container}>
       <div className={classes.title}>오늘의 메뉴</div>
-      <Card>
+      <div className={classes.menucontainer}>
+        <ButtonLink to="/ingredient">
+          <div className={classes.menu_foods}>
+            <img src={soybeansoup} alt="soybeansoup" /> 된장찌개
+          </div>
+        </ButtonLink>
         <div className={classes.menu_foods}>
-          <CardContent className={classes.cardfood}>
-            <img src={soybeansoup} alt="soup" /> 된장찌개
-          </CardContent>
+          <img src={kimchisoup} alt="kimchisoup" />
+          김치찌개
         </div>
         <div className={classes.menu_foods}>
-          <CardContent>김치찌개</CardContent>
+          <img src={stirFriedPork} alt="friedpork" />
+          제육볶음
         </div>
         <div className={classes.menu_foods}>
-          <CardContent>제육볶음</CardContent>
+          <img src={seaweedsoup} alt="seaweedsoup" />
+          미역국
         </div>
         <div className={classes.menu_foods}>
-          <CardContent>미역국</CardContent>
+          <img src={curry} alt="curry" />
+          카레
         </div>
         <div className={classes.menu_foods}>
-          <CardContent>카레</CardContent>
+          <img src={dumplingsoup} alt="dumplingsoup" />
+          만둣국
         </div>
-        <div className={classes.menu_foods}>
-          <CardContent>만둣국</CardContent>
-        </div>
-      </Card>
+      </div>
     </div>
   );
 };

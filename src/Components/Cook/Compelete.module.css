@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 360px;
+    height: 640px;
+    border: 1px solid gray;
+    justify-content: space-between;
+}
+
+.materialbutton {
+    height: 80px;
+    margin: 15px;
+    font-size: 32px;
+    padding: 30px 90px 30px 90px;
+    margin-bottom: 25px;
+}
+
+.controlbutton {
+    display: flex;
+}
+.title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.boximg {
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    margin: 40px 40px 0px 40px;
+    object-fit: cover;
+
+}

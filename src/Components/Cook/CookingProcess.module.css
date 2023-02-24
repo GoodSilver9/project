@@ -1,0 +1,15 @@
+
+.boximg {
+    width: 300px;
+    height: 150px;
+    overflow: hidden;
+    margin: 40px 40px 0px 40px;
+    object-fit: cover;
+    
+    
+    
+}
+.explanation {
+    font-size: 16px;
+    margin-left: 40px;
+}
