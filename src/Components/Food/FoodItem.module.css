@@ -5,18 +5,6 @@
     width: 360px;
     height: 640px;
     border: 1px solid gray;
-    justify-content: space-between;
-}
-.button {
-    width: 130px;
-    height: 80px;
-    margin: 15px;
-    font-size: 32px;
-}
-.controlbutton{
-    display: flex;
-    justify-content: space-around;
-    gap: 15px;
 }
 
 .boximg {
@@ -26,9 +14,12 @@
     margin: 40px 40px 0px 40px;
     object-fit: cover;
 
+
+
 }
 
 .explanation {
     font-size: 16px;
     margin-left: 40px;
 }
+

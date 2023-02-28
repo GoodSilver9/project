@@ -1,13 +1,12 @@
 import React from "react";
 import classes from "./Cooking.module.css";
 import { Button } from "@mui/material";
-import CookingProcess from "../Cook/CookingProcess";
 import ButtonLink from "../MenuLink/ButtonLink";
 
-const Cooking = () => {
+const Cooking = (props: any) => {
   return (
     <div className={classes.container}>
-      <CookingProcess />
+      {props.children}
       <div className="controlbutton">
         <ButtonLink to="/ingredient">
           <Button variant="outlined" className={classes.button}>
