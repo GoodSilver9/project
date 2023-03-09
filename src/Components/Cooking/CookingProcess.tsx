@@ -1,24 +1,33 @@
 import React, { useState, useEffect } from "react";
 import FoodItem from "../Food/FoodItem";
 import Cooking from "./Cooking";
-import Food from "../Interface/Interface";
 import classes from "./CookingProcess.module.css";
-import { Button } from "@mui/material";
+import { Button, Menu } from "@mui/material";
+import Compelete from "../Cook/Compelete";
+import Ingredient from "../Menu/Ingredient";
+import MenuLink from "../MenuLink/MenuLink";
+import { useParams } from "react-router";
 
 const CookingProcess = () => {
   const [foods, setFoods] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [httpError, setHttpError] = useState();
-  const [foodId, setFoodId] = useState("f1");
+  const [foodIndex, setFoodIndex] = useState(0);
 
-  const NextFoodIdHandler = () => {
-    setFoodId(foodId + 1);
+  const { menuName } = useParams();
+
+  const NextFoodIndexHandler = () => {
+    setFoodIndex(foodIndex + 1);
   };
+  const BeforeFoodIndexHandler = () => {
+    setFoodIndex(foodIndex - 1);
+  };
+
+  const selectedFood = foods[foodIndex] as any;
 
   useEffect(() => {
     const fecthFoods = async () => {
       const response = await fetch(
-        "https://react-study-project-a16db-default-rtdb.firebaseio.com/soybeansoup.json"
+        `https://react-study-project-a16db-default-rtdb.firebaseio.com/${menuName}/cooking.json`
       );
 
       if (!response.ok) {
@@ -43,37 +52,51 @@ const CookingProcess = () => {
 
     fecthFoods().catch((error) => {
       setIsLoading(false);
-      setHttpError(error.message);
     });
-  }, []);
+  }, [menuName]);
 
   if (isLoading) {
-    console.log("loading...");
-  }
-  if (httpError) {
-    console.log("에러!");
+    return <div className={classes.container}>로딩중</div>;
   }
 
-  const f1Foods = foods.filter((food: any) => food.id === foodId);
-
-  const foodsList = f1Foods.map((food: Food) => (
-    <FoodItem
-      key={food.id}
-      id={food.id}
-      description={food.description}
-      img={food.img}
-      foods={foods}
-    />
-  ));
+  if (foodIndex === foods.length) {
+    return <Compelete />;
+  }
+  if (foodIndex < 0) {
+    return <MenuLink to="ingredient" />;
+  }
 
   return (
-    console.log(foodId),
-    (
-      <div className={classes.container}>
-        <Cooking>{foodsList}</Cooking>
-        <Button onClick={NextFoodIdHandler}>다음</Button>
-      </div>
-    )
+    <div className={classes.container}>
+      <Cooking
+        NextFoodIndexHandler={NextFoodIndexHandler}
+        BeforeFoodIndexHandler={BeforeFoodIndexHandler}
+      >
+        <FoodItem
+          key={selectedFood.id}
+          id={selectedFood.id}
+          description={selectedFood.description}
+          img={selectedFood.img}
+        />
+        <div className="controlbutton">
+          <Button
+            variant="outlined"
+            className={classes.button}
+            onClick={BeforeFoodIndexHandler}
+          >
+            이전
+          </Button>
+
+          <Button
+            variant="contained"
+            className={classes.button}
+            onClick={NextFoodIndexHandler}
+          >
+            다음
+          </Button>
+        </div>
+      </Cooking>
+    </div>
   );
 };
 

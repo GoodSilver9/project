@@ -13,31 +13,41 @@ const Menu = () => {
     <div className={classes.container}>
       <div className={classes.title}>오늘의 메뉴</div>
       <div className={classes.menucontainer}>
-        <ButtonLink to="/ingredient">
+        <ButtonLink to="/ingredient/soybeansoup">
           <div className={classes.menu_foods}>
             <img src={soybeansoup} alt="soybeansoup" /> 된장찌개
           </div>
         </ButtonLink>
-        <div className={classes.menu_foods}>
-          <img src={kimchisoup} alt="kimchisoup" />
-          김치찌개
-        </div>
-        <div className={classes.menu_foods}>
-          <img src={stirFriedPork} alt="friedpork" />
-          제육볶음
-        </div>
-        <div className={classes.menu_foods}>
-          <img src={seaweedsoup} alt="seaweedsoup" />
-          미역국
-        </div>
-        <div className={classes.menu_foods}>
-          <img src={curry} alt="curry" />
-          카레
-        </div>
-        <div className={classes.menu_foods}>
-          <img src={dumplingsoup} alt="dumplingsoup" />
-          만둣국
-        </div>
+        <ButtonLink to="/ingredient/kimchisoup">
+          <div className={classes.menu_foods}>
+            <img src={kimchisoup} alt="kimchisoup" />
+            김치찌개
+          </div>
+        </ButtonLink>
+        <ButtonLink to="/ingredient/stirFriedPork">
+          <div className={classes.menu_foods}>
+            <img src={stirFriedPork} alt="friedpork" />
+            제육볶음
+          </div>
+        </ButtonLink>
+        <ButtonLink to="/ingredient/seaweedsoup">
+          <div className={classes.menu_foods}>
+            <img src={seaweedsoup} alt="seaweedsoup" />
+            미역국
+          </div>
+        </ButtonLink>
+        <ButtonLink to="/ingredient/curry">
+          <div className={classes.menu_foods}>
+            <img src={curry} alt="curry" />
+            카레
+          </div>
+        </ButtonLink>
+        <ButtonLink to="/ingredient/dumplingsoup">
+          <div className={classes.menu_foods}>
+            <img src={dumplingsoup} alt="dumplingsoup" />
+            만둣국
+          </div>
+        </ButtonLink>
       </div>
     </div>
   );

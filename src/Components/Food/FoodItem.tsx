@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-import Food from "../Interface/Interface";
 import classes from "../Food/FoodItem.module.css";
 
-const FoodItem = (props: Food) => {
+const FoodItem = (props: any) => {
   return (
     <div className={classes.container}>
       <img className={classes.boximg} src={props.img} alt="soybeansoup" />

@@ -7,17 +7,6 @@
     border: 1px solid gray;
     justify-content: space-between;
 }
-.button {
-    width: 130px;
-    height: 80px;
-    margin: 15px;
-    font-size: 32px;
-}
-.controlbutton{
-    display: flex;
-    justify-content: space-around;
-    gap: 15px;
-}
 
 .boximg {
     width: 300px;

@@ -1,10 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import classes from "./App.module.css";
 import Title from "./Components/Title";
 import Menu from "./Components/Menu/Menu";
 import Ingredient from "./Components/Menu/Ingredient";
-import Cooking from "./Components/Cooking/Cooking";
 import MenuLink from "./Components/MenuLink/MenuLink";
 import Compelete from "./Components/Cook/Compelete";
 import CookingProcess from "./Components/Cooking/CookingProcess";
@@ -22,8 +20,8 @@ const App = () => {
       <Routes>
         <Route path="/title" element={<Title />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/ingredient" element={<Ingredient />} />
-        <Route path="/cookingprocess" element={<CookingProcess />} />
+        <Route path="/ingredient/:menuName" element={<Ingredient />} />
+        <Route path="/cookingprocess/:menuName" element={<CookingProcess />} />
         <Route path="/compelete" element={<Compelete />} />
       </Routes>
     </div>
